@@ -1,0 +1,265 @@
+@import url(//fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap);
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+/*   font-family: 'Ubuntu', sans-serif; */
+}
+
+body{
+  background: rgb(255, 255, 255);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+
+.wrapper{
+  width: 100%;
+}
+
+.nav-bar{
+  font: 2vh "ubuntu";
+  width: 100%;
+  height: 60px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.nav-bar ul li{
+  display: inline-block;
+  margin: 0 15px;
+  position: relative;
+}
+
+.nav-bar ul li a{
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.5s linear;
+}
+
+.nav-bar ul li a:hover{
+  color: #4e4e4e;
+}
+
+.hamburger{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  color: rgb(75, 75, 75);
+  font-size: 25px;
+  border-radius: 5px;
+  display: none;
+  transition: 0.5s linear;
+}
+
+.hamburger .fas{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@media screen and (max-width: 768px){
+  .nav-bar{
+    width: 45%;
+    height: auto;
+    margin-left: -500px;
+  }
+  .nav-bar ul li{
+    display: block;
+    text-align: center;
+    margin: 25px 0;
+  }
+  .hamburger{
+    display: block;
+  }
+  .nav-bar.active{
+    margin-left: 0;
+    transition: 0.5s linear;
+  }
+}
+
+
+/*morphing  headline*/
+
+.morphing {
+  font:220px "apple";
+  position: relative;
+  top: 0cm;
+  font-size: 16vh;
+  color: rgb(0, 0, 0);
+  min-height: 60vh;
+  filter: contrast(2) blur(0.1px);
+}
+
+.word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ animation: word 20s infinite;
+}
+.word:nth-child(1) {
+  -webkit-animation-delay: -18s;
+          animation-delay: -18s;
+}
+.word:nth-child(2) {
+  -webkit-animation-delay: -15s;
+          animation-delay: -15s;
+}
+.word:nth-child(3) {
+  -webkit-animation-delay: -12s;
+          animation-delay: -12s;
+}
+.word:nth-child(4) {
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+}
+
+@keyframes word {
+  0%, 5%, 100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  20%, 80% {
+    filter: blur(1em);
+    opacity: 0;
+  }
+}
+/*bass showof*/
+@font-face {
+  font-family: "apple";
+  src: url(https://cdn.glitch.com/9688689f-2df1-4a85-ab79-77e005d3799d%2FSF-UI-Display-Bold.otf?v=1628800468967);
+}
+.card {
+  background: rgb(0, 0, 0);
+  border-radius: 2px;
+  display: inline-block;
+  height: 40%;
+  position: relative;
+  top: 0.4cm;
+  width: 100%;
+}
+
+.bass1{
+  color: #fff;
+  text-align: center;
+  font: 400 10vh "apple";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translate(0,-50%);
+}
+/*vibrating text */
+.vibration{
+  transition: all 500ms;
+  color: rgb(255, 255, 255);
+  display: inline;
+  margin-right: 10px;
+  text-shadow: 1px 2px 3px rgb(0, 0, 0);
+  font: 400 10vh"apple";
+  display: inline-block!important;
+}
+.vibration{
+  filter: blur(3px);
+  animation: vibrate 50ms linear  forwards;
+}
+@keyframes vibrate{
+  0% {
+      transform: translateX(-1px) translateY(1px);
+  }
+  100% {
+      transform: translateX(1px) translateY(-2px);
+  }
+}
+
+/*box white second*/
+.box2 {
+  background: rgba(255, 255, 255, 0);
+  border-radius: 2px;
+  display: inline-block;
+  height: 500px;
+  margin: 1rem;
+  position: relative;
+  top: 3cm;
+  left: 0cm;
+  width: 100%;
+  text-align:center;
+}
+.next{
+color:#000;
+font:400 12vh "apple";
+position:relative; 
+top:-15%;
+left:-15%;
+
+}
+
+.canvas{
+postition:absolute;
+}
+
+/*box black third*/
+.box3 {
+  background: rgb(0, 0, 0);
+  border-radius: 2px;
+  display: inline-block;
+  height: 66.4%;
+  position: relative;
+  top: 0.4cm;
+  width: 100%;
+  text-align:center;
+}
+.rainbowtext{
+position:relative;
+top:15%;
+width:100%;
+color:#000;
+font:400 12vh "apple";
+animation: rainbow-colors 2s linear infinite;
+animation-delay: calc(-2s * var(--char-percent));
+
+}
+
+@keyframes rainbow-colors {
+  0% { color: hsl(0turn, 90%, 65%); }
+  25% { color: hsl(.25turn, 90%, 65%); }
+  50% { color: hsl(.5turn, 90%, 65%); }
+  75% { color: hsl(.75turn, 90%, 65%); }
+  100% { color: hsl(1turn, 90%, 65%); }
+}
+img{
+max-width:122vh;
+height:auto;
+position:absolute;
+top:40%;
+left: 20%;
+}
+ 
+
+
+
+
+
+
+/*.card {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}*/
+
